@@ -1,6 +1,12 @@
-
+    <h1>Contacto</h1>
     <div class="container">
-        <h3>{{ contact.name }}</h3>
-        <h5>{{ contact.number }}</h5>
-        <h5>{{ contact.email }}</h5>
+        <div class="cuadrado">
+            <img src="/src/assets/img/contact.png" alt="">
+            <h3>{{ contact.name }}</h3>
+            <h5>Numero telefonico:    {{ contact.number }}</h5>
+            <h5>Correo electronico:    {{ contact.email }}</h5>
+        </div>
     </div>
+    <button type="button" routerLink="/contact/">Volver</button>
+
+

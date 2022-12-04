@@ -1,88 +1,32 @@
-<div class="container">    
-    <div class="row mt-3">
-        <div class="col-lg-6">
-            <h3>Listado de Contactos</h3>
-        </div>
-        <div class="col-lg-6">
-            <button class="btn btn-primary float-end" routerLink="/contact/agregar">Nuevo Contacto</button>
-        </div>
-    </div>
-
-
-    <!-- <table *ngIf="listContactos.length > 0" class="table table-hover mt-3"> -->
-    <table class="table table-hover mt-3">
-        <thead>
-            <tr>
-                <td>Nombre</td>
-                <td>Numero</td>
-                <td>Email</td>
-                <td></td>
-                <td></td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let contacto of listContactos">
-                <td>
-                    <a [routerLink]="['/contact/ver', contacto.id]">{{contacto.name}}</a>                
-                </td>
-                <td>{{contacto.number}}</td>
-                <td>{{contacto.email}}</td>
-                <td>
-                    <button [routerLink]="['/contact/editar', contacto.id]" class="btn btn-primary btn-sm float-end">Editar</button>
-                </td>
-                <td>
-                    <button (click)="eliminarContact(contacto.id)" class="btn btn-danger btn-sm float-end">Eliminar</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<div class="titulo"> 
+    <h3>Listado de Contactos</h3>
+    <button routerLink="/contact/agregar" class="newcontact">Nuevo Contacto</button>
+</div>
+<div class="container">   
+    <ul class="responsive-table" *ngIf="listContactos.length > 0">
+        <li class="table-header">
+            <div class="col col-1">Nombre</div>
+            <div class="col col-2">Numero</div>
+            <div class="col col-3">Email</div>
+            <div class="col col-4"></div>
+            <div class="col col-5"></div>
+        </li>
+        <li class="table-row" *ngFor="let contacto of listContactos">
+            <div class="col col-1" data-label="Nombre">
+                <a [routerLink]="['/contact/ver', contacto.id]">{{contacto.name}}</a>
+            </div>
+            <div class="col col-2" data-label="Numero">{{contacto.number}}</div>
+            <div class="col col-3" data-label="Email">{{contacto.email}}</div>
+            <div class="col col-4" data-label="">
+                <button [routerLink]="['/contact/editar', contacto.id]" class="accionEdit">Editar</button>
+            </div>
+            <div class="col col-5" data-label="">
+                <button (click)="eliminarContact(contacto.id)" class="accionDelet">Eliminar</button>
+            </div>
+        </li>
+    </ul>
+           
     <div *ngIf="listContactos.length == 0" class="row mt-5">
         <h5>No Hay Contactos para mostrar</h5>
     </div>
-
-
-
-
-
-    <h2>Responsive Tables Using LI <small>Triggers on 767px</small></h2>
-            <ul class="responsive-table">
-              <li class="table-header">
-                <div class="col col-1">Nombre</div>
-                <div class="col col-2">Numero</div>
-                <div class="col col-3">Email</div>
-                <div class="col col-4"></div>
-                <div class="col col-5"></div>
-              </li>
-
-              <li class="table-row">
-                <div class="col col-1" data-label="Nombre">John Doe</div>
-                <div class="col col-2" data-label="Numero">21414212</div>
-                <div class="col col-3" data-label="Email">John@gmiail.com</div>
-                <div class="col col-4" data-label=""></div>
-                <div class="col col-5" data-label=""></div>
-              </li>
-              <li class="table-row">
-                <div class="col col-1" data-label="Nombre">John Doe</div>
-                <div class="col col-2" data-label="Numero">21414212</div>
-                <div class="col col-3" data-label="Email">John@gmiail.com</div>
-                <div class="col col-4" data-label=""></div>
-                <div class="col col-5" data-label=""></div>
-              </li>
-              <li class="table-row">
-                <div class="col col-1" data-label="Nombre">John Doe</div>
-                <div class="col col-2" data-label="Numero">21414212</div>
-                <div class="col col-3" data-label="Email">John@gmiail.com</div>
-                <div class="col col-4" data-label=""></div>
-                <div class="col col-5" data-label=""></div>
-              </li>
-              <li class="table-row">
-                <div class="col col-1" data-label="Nombre">John Doe</div>
-                <div class="col col-2" data-label="Numero">21414212</div>
-                <div class="col col-3" data-label="Email">John@gmiail.com</div>
-                <div class="col col-4" data-label=""></div>
-                <div class="col col-5" data-label=""></div>
-              </li>
-            </ul>
-
-
 </div>
