@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { iAuthRequest } from 'src/app/interfaces/auth';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -12,16 +11,8 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent {
 
   constructor(private auth:AuthService, private router:Router) { }
-
-    //Hecho usando NgModel
-    authData:iAuthRequest = {
-      userName : "",
-      password : ""
-    };
-  
   
     async login(form:NgForm){
-      //Valor del formulario para no usar NgModel
       console.log(form.value);
       const token = await this.auth.login(form.value);
       if(token) this.router.navigate(['']);

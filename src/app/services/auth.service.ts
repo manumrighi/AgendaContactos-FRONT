@@ -66,19 +66,4 @@ export class AuthService {
     window.location.reload();
   }
 }
-
-// start() {
-//   if (this.getSession().token !== '') {
-//     this.getMe().subscribe((result: IMeData) => {
-//       if (!result.status) {
-//         //Si no tengo status hubo error en el logueo
-//         this.resetSession();
-//         return;
-//       }
-//       this.loggedIn = true; //Logueo exitoso
-//       return;
-//     });
-//   } else {
-//     this.resetSession();
-//   } // Logueo erróneo
-// }
+ 

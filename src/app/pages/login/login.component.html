@@ -1,5 +1,6 @@
 <div id="container">
     <h1>Agenda de contactos</h1>
+    
     <form (ngSubmit)="login(form)" #form="ngForm">
       <div class="inputs">
         <label for="email">Email</label>
@@ -8,6 +9,7 @@
         >
       </div>
       <p *ngIf="email.touched && email.errors">Correo electrónico no válido.</p>
+
       <div class="inputs">
         <label for="password">Password</label>
         <input type="password" name="password" id="password" autocomplete="current-password" placeholder="Type your password"
@@ -15,6 +17,7 @@
         >
       </div>
       <div *ngIf="password.touched && password.errors">La contraseña debe tener al menos 6 caracteres.</div>
+      
       <div>
         <button type="submit" [disabled]="form.invalid">Log In</button>
         <button type="button" [routerLink]="['signin']">Sign In</button>

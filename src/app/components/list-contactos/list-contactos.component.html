@@ -1,6 +1,6 @@
 <div class="titulo"> 
     <h3>Listado de Contactos</h3>
-    <button routerLink="/contact/agregar" class="newcontact">Nuevo Contacto</button>
+    <button routerLink="/agregar" class="newcontact">Nuevo Contacto</button>
 </div>
 <div class="container">   
     <ul class="responsive-table" *ngIf="listContactos.length > 0">
@@ -13,12 +13,12 @@
         </li>
         <li class="table-row" *ngFor="let contacto of listContactos">
             <div class="col col-1" data-label="Nombre">
-                <a [routerLink]="['/contact/ver', contacto.id]">{{contacto.name}}</a>
+                <a [routerLink]="['/ver', contacto.id]">{{contacto.name}}</a>
             </div>
             <div class="col col-2" data-label="Numero">{{contacto.number}}</div>
             <div class="col col-3" data-label="Email">{{contacto.email}}</div>
             <div class="col col-4" data-label="">
-                <button [routerLink]="['/contact/editar', contacto.id]" class="accionEdit">Editar</button>
+                <button [routerLink]="['/editar', contacto.id]" class="accionEdit">Editar</button>
             </div>
             <div class="col col-5" data-label="">
                 <button (click)="eliminarContact(contacto.id)" class="accionDelet">Eliminar</button>
