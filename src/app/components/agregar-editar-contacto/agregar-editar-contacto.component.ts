@@ -52,7 +52,6 @@ export class AgregarEditarContactoComponent implements OnInit {
 
 
   agregarEditarContacto() {
-
     // Agregamos un nuevo contacto
     if (this.contact == undefined) {
       const contactos: Contact = {
@@ -67,7 +66,6 @@ export class AgregarEditarContactoComponent implements OnInit {
         console.log(error);
       })
     } else {
-
       // Editamos contacto
       const contact: Contact = {
         id: this.contact.id,
@@ -76,13 +74,12 @@ export class AgregarEditarContactoComponent implements OnInit {
         email: this.agregarContact.get('email')?.value,
         favorite: this.agregarContact.get('favorite')?.value,
       }
-
       this._contactService.updateContact(this.id, contact).subscribe(data => {
         this.router.navigate(['/contact/'])
       }, error => {
         console.log(error);
       })
     }
-
   }
+  
 }
