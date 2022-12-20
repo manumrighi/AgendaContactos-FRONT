@@ -13,8 +13,13 @@ const routes: Routes = [
     loadChildren: ()=> import('./pages/home/home.module').then(m => m.HomeModule),
   },
   {
+    path: 'register',
+    loadChildren: ()=> import('./pages/register/register.module').then(m => m.RegisterModule),
+  },
+  {
     path: '',
     loadChildren: ()=> import('./pages/contact/contact.module').then(m => ContactModule),
+    canActivate: [LoggedUserGuard]
   },
 ];
 
