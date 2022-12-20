@@ -2,12 +2,12 @@
   <h1>Agenda de contactos</h1>
   <form (ngSubmit)="login(form)" #form="ngForm">
     <div class="inputs">
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" autocomplete="email" placeholder="Type your email address"
-        [(ngModel)]="authData.userName" #email="ngModel" pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'
+      <label for="userName">userName</label>
+      <input type="text" name="userName" id="userName" autocomplete="userName" placeholder="Type your userName"
+        [(ngModel)]="authData.userName" #userName="ngModel" pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'
       >
     </div>
-    <p *ngIf="email.touched && email.errors">Correo electrónico no válido.</p>
+    <p *ngIf="userName.touched && userName.errors">UserName no válido.</p>
     <div class="inputs">
       <label for="password">Password</label>
       <input type="password" name="password" id="password" autocomplete="current-password" placeholder="Type your password"
