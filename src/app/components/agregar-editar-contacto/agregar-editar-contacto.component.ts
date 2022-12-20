@@ -13,7 +13,7 @@ export class AgregarEditarContactoComponent implements OnInit {
   agregarContact: FormGroup;
   accion = 'Agregar';
   id = 0;
-  contacto: Contact | undefined;
+  contact: Contact | undefined;
 
   constructor(private fb: FormBuilder,
               private _contactService: ContactService,
@@ -21,8 +21,9 @@ export class AgregarEditarContactoComponent implements OnInit {
               private aRoute: ActivatedRoute) {
     this.agregarContact = this.fb.group({
       name: ['', Validators.required],
-      number: ['', Validators.required],
+      num: ['', Validators.required],
       email: ['', Validators.required],
+      fav: ['', Validators.required],
     })
     this.id = +this.aRoute.snapshot.paramMap.get('id')!;
   }
@@ -36,11 +37,12 @@ export class AgregarEditarContactoComponent implements OnInit {
       this.accion = 'Editar'
       this._contactService.getContact(this.id).subscribe(data => {
         console.log(data);
-        this.contacto = data;
+        this.contact = data;
         this.agregarContact.patchValue({
           name: data.name,
-          number: data.number,
+          num: data.celularnumber,
           email: data.email,
+          fav: data.favorite,
         })
       }, error => {
         console.log(error);
@@ -52,11 +54,13 @@ export class AgregarEditarContactoComponent implements OnInit {
   agregarEditarContacto() {
 
     // Agregamos un nuevo contacto
-    if(this.contacto == undefined) {
+    if(this.contact == undefined) {
       const contactos: Contact = {
+        id: this.agregarContact.get('id')?.value,
         name: this.agregarContact.get('name')?.value,
-        number: this.agregarContact.get('number')?.value,
+        celularnumber: this.agregarContact.get('celularnumber')?.value,
         email: this.agregarContact.get('email')?.value,
+        favorite: this.agregarContact.get('favorite')?.value
       }
       this._contactService.saveContact(contactos).subscribe(data => {
         this.router.navigate(['/contact/']); 
@@ -67,10 +71,11 @@ export class AgregarEditarContactoComponent implements OnInit {
 
       // Editamos contacto
       const contactos: Contact = {
-        id: this.contacto.id, 
+        id: this.contact.id, 
         name: this.agregarContact.get('name')?.value,
-        number: this.agregarContact.get('number')?.value,
+        celularnumber: this.agregarContact.get('celularnumber')?.value,
         email: this.agregarContact.get('email')?.value,
+        favorite: this.agregarContact.get('favorite')?.value,
       }
 
       this._contactService.updateContact(this.id, contactos).subscribe(data => {

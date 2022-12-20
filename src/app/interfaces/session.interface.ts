@@ -2,6 +2,7 @@ import { IUser } from "./user.interface";
 
 export interface ISession{
   expiresIn: string;
+  id? : string;
   token?: string;
 }
 
