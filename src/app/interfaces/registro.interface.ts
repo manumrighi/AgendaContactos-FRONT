@@ -1,5 +1,6 @@
 export interface IRegistroInterface {
     name: string;
-    number: string;
+    telefono: string;
+    email:string;
     password:string;
   }
