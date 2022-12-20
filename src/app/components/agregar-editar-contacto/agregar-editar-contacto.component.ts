@@ -59,7 +59,7 @@ export class AgregarEditarContactoComponent implements OnInit {
         name: this.agregarContact.get('name')?.value,
         celularNumber: this.agregarContact.get('celularNumber')?.value,
         email: this.agregarContact.get('email')?.value,
-        // favorite: this.agregarContact.get('favorite')?.value,
+        favorite: this.agregarContact.get('favorite')?.value,
       }
       this._contactService.saveContact(contactos).subscribe(data => {
         this.router.navigate(['/contact/']);
@@ -74,7 +74,7 @@ export class AgregarEditarContactoComponent implements OnInit {
         name: this.agregarContact.get('name')?.value,
         celularNumber: this.agregarContact.get('celularNumber')?.value,
         email: this.agregarContact.get('email')?.value,
-        // favorite: this.agregarContact.get('favorite')?.value,
+        favorite: this.agregarContact.get('favorite')?.value,
       }
 
       this._contactService.updateContact(this.id, contact).subscribe(data => {
