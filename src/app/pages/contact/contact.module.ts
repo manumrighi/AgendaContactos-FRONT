@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 // Componentes
-import { ContactComponent } from './contact.component';
 import { AgregarEditarContactoComponent } from 'src/app/components/agregar-editar-contacto/agregar-editar-contacto.component';
 import { ListContactosComponent } from 'src/app/components/list-contactos/list-contactos.component';
 
@@ -13,7 +12,6 @@ import { ListContactosComponent } from 'src/app/components/list-contactos/list-c
 
 @NgModule({
   declarations: [
-    ContactComponent,
     AgregarEditarContactoComponent,
     ListContactosComponent,
   ],

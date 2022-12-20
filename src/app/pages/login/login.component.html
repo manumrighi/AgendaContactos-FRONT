@@ -1,37 +1,28 @@
-<div class="inicio-sesion">
+<div class="titulo">
+  <h3>INICIAR SESION</h3>
+</div>
 
-  <div id="fondo-inicio-sesion">
+<div class="container">
+  <div class="contact_form">
+    <form (ngSubmit)="login(form)" #form="ngForm">
 
-    <section id="title">
-      <h1>Iniciar Sesión</h1>
-    </section>
+      <p>
+        <label for="userName">UserName</label>
 
-    <section id="form-iniciar-sesion">
-      <div class="container">
+        <input type="userName" name="userName" id="userName" autocomplete="userName" placeholder="ingresa tu userName"
+          [(ngModel)]="authData.userName" #email="ngModel">
+      </p>
 
-        <form (ngSubmit)="login(form)" #form="ngForm">
-          <div class="inputs">
-            <label for="userName">UserName</label>
+      <p>
+        <label for="password">Password</label>
 
-            <input type="userName" name="userName" id="userName" autocomplete="userName" placeholder="ingresa tu userName"
-              [(ngModel)]="authData.userName" #email="ngModel">
-          </div>
+        <input type="password" name="password" id="password" autocomplete="current-password"
+          placeholder="Ingresa tu contraseña" [(ngModel)]="authData.password" [required]="true" #password="ngModel">
+      </p>
 
-          <div class="inputs">
-            <label for="password">Password</label>
+      <button type="submit" [disabled]="form.invalid">Ingresar</button>
+      <button type="button" [routerLink]="['/registrarse']">Registrarme</button>
 
-            <input type="password" name="password" id="password" autocomplete="current-password" placeholder="Ingresa tu contraseña"
-              [(ngModel)]="authData.password" [required]="true" #password="ngModel"
-            >
-          </div>
-
-          <div>
-            <button type="submit" [disabled]="form.invalid">Ingresar</button>
-            <button type="button" [routerLink]="['/registrarse']">Registrarme</button>
-          </div>
-        </form>
-
-      </div>
-    </section>
+    </form>
   </div>
 </div>
