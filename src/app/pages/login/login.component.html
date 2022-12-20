@@ -1,23 +1,37 @@
-<div id="container">
-  <h1>Agenda de contactos</h1>
-  <form (ngSubmit)="login(form)" #form="ngForm">
-    <div class="inputs">
-      <label for="userName">userName</label>
-      <input type="text" name="userName" id="userName" autocomplete="userName" placeholder="Type your userName"
-        [(ngModel)]="authData.userName" #userName="ngModel" pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'
-      >
-    </div>
-    <p *ngIf="userName.touched && userName.errors">UserName no válido.</p>
-    <div class="inputs">
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" autocomplete="current-password" placeholder="Type your password"
-        [(ngModel)]="authData.password" [required]="true" [minlength]="6" #password="ngModel"
-      >
-    </div>
-    <div *ngIf="password.touched && password.errors">La contraseña debe tener al menos 6 caracteres.</div>
-    <div>
-      <button type="submit" [disabled]="form.invalid">Log In</button>
-      <button type="button" [routerLink]="['signin']">Sign In</button>
-    </div>
-  </form>
+<div class="inicio-sesion">
+
+  <div id="fondo-inicio-sesion">
+
+    <section id="title">
+      <h1>Iniciar Sesión</h1>
+    </section>
+
+    <section id="form-iniciar-sesion">
+      <div class="container">
+
+        <form (ngSubmit)="login(form)" #form="ngForm">
+          <div class="inputs">
+            <label for="userName">UserName</label>
+
+            <input type="userName" name="userName" id="userName" autocomplete="userName" placeholder="ingresa tu userName"
+              [(ngModel)]="authData.userName" #email="ngModel">
+          </div>
+
+          <div class="inputs">
+            <label for="password">Password</label>
+
+            <input type="password" name="password" id="password" autocomplete="current-password" placeholder="Ingresa tu contraseña"
+              [(ngModel)]="authData.password" [required]="true" #password="ngModel"
+            >
+          </div>
+
+          <div>
+            <button type="submit" [disabled]="form.invalid">Ingresar</button>
+            <button type="button" [routerLink]="['/registrarse']">Registrarme</button>
+          </div>
+        </form>
+
+      </div>
+    </section>
+  </div>
 </div>
