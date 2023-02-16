@@ -1,11 +1,11 @@
 
 
-<div class="titulo"> 
-    <button [routerLink]="['/login']" class="header">LOGIN</button>
+<div class="titulo">
+    <button [routerLink]="['/login']" class="header">Cerrar Sesión</button>
     <h3>Listado de Contactos</h3>
     <button routerLink="/agregar" class="newcontact">Nuevo Contacto</button>
 </div>
-<div class="container">   
+<div class="container">
     <ul class="responsive-table" *ngIf="listContactos.length > 0">
         <li class="table-header">
             <div class="col col-1">Nombre</div>
@@ -27,11 +27,13 @@
             <div class="col col-5" data-label="">
                 <button (click)="eliminarContact(contact.id)" class="accionDelet">Eliminar</button>
             </div>
-            <div class="col col-6" data-label="favorite">{{contact.favorite}}</div>
+
+            <div *ngIf="contact.favorite == true"></div>
+            <div *ngIf="contact.favorite == false">X</div>
         </li>
     </ul>
-           
+
     <div *ngIf="listContactos.length == 0" class="row mt-5">
-        <h5>No Hay Contactos para mostrar</h5>
+        <h5>No hay contactos para mostrar</h5>
     </div>
 </div>
