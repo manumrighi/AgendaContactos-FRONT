@@ -51,11 +51,14 @@ body {
     font-size: 100%;
     height: 44px;
     line-height: 1.15;
-    margin: 12px 0 0;
+    margin: 2px 0 0;
     padding: 0 25px;
     position: relative;
     text-align: center;
     width: 20%;
+  }
+  .lista{
+    margin: 5px 0 0;
   }
 
   .cerrarSesion{
@@ -69,7 +72,7 @@ body {
     font-size: 100%;
     height: 44px;
     line-height: 1.15;
-    margin: 12px 0 0;
+    margin: 2px 0 0;
     padding: 0 25px;
     position: relative;
     text-align: center;
@@ -110,9 +113,7 @@ body {
 
   //estrella
   .icon {
-    font-size: 2rem;
     color: red;
-    padding-top: 5%;
   }
 
   //ultima estrella amarilla
@@ -186,7 +187,7 @@ body {
       flex-basis: 10%;
     }
     .col-3 {
-      flex-basis: 15%;
+      flex-basis: 12%;
     }
     .col-4 {
       flex-basis: 10%;

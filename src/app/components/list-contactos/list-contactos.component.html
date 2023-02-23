@@ -1,8 +1,8 @@
-
+<head><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined"></head>
 
 <div class="titulo">
     <button [routerLink]="['/login']" class="cerrarSesion">Cerrar Sesión</button>
-    <h3>Listado de Contactos</h3>
+    <h3 class="lista">Listado de Contactos</h3>
     <button routerLink="/agregar" class="newcontact">Nuevo Contacto</button>
 </div>
 <div class="container">
@@ -16,9 +16,7 @@
             <div class="col col-6">Favorito</div>
         </li>
         <li class="table-row" *ngFor="let contact of listContactos">
-            <div class="col col-1" data-label="Nombre">
-                <a [routerLink]="['/ver', contact.id]">{{contact.name}}</a>
-            </div>
+            <div class="col col-1" data-label="Nombre">{{contact.name}}</div>
             <div class="col col-2" data-label="Numero">{{contact.celularNumber}}</div>
             <div class="col col-3" data-label="Email">{{contact.email}}</div>
             <div class="col col-4" data-label="">
@@ -28,8 +26,8 @@
                 <button (click)="eliminarContact(contact.id)" class="accionDelet">Eliminar</button>
             </div>
 
-            <div *ngIf="contact.favorite == true"></div>
-            <div *ngIf="contact.favorite == false">X</div>
+            <div *ngIf="contact.favorite == true"><span class="material-icons-outlined icon">favorite</span></div>
+            <div *ngIf="contact.favorite == false"><span class="material-icons-outlined icon">favorite_border</span></div>
         </li>
     </ul>
 
