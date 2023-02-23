@@ -4,7 +4,7 @@ export interface Contact {
     celularNumber: number;
     email: string;
     favorite?: boolean;
-} 
+}
 
 export interface ContactJsonPlaceholder {
     id: number;
