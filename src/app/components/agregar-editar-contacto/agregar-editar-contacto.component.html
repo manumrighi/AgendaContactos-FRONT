@@ -8,17 +8,17 @@
             <form [formGroup]="agregarContact" (ngSubmit)="agregarEditarContacto()">
         <p>
 					<label for="nombre" class="colocar_nombre">Nombre</label>
-					<input formControlName="name" type="text" id="nombre" placeholder="Escribe tu nombre">
+					<input formControlName="name" type="text" id="nombre" placeholder="Escribe tu nombre" autocomplete="off">
 				</p>
 
 				<p>
 					<label for="number" class="colocar_telefono">Numero</label>
-					<input formControlName="celularNumber" type="number" id="number" placeholder="Escribe tu teléfono">
+					<input formControlName="celularNumber" type="tel" min="10" max="15" id="number" placeholder="Escribe tu teléfono" autocomplete="off">
 				</p>
 
         <p>
 					<label for="email" class="colocar_email">Correo Electronico</label>
-					<input formControlName="email" type="email" id="email" placeholder="Escribe tu Email">
+					<input formControlName="email" type="email" id="email" placeholder="Escribe tu Email" autocomplete="off">
         </p>
 
 				<p>

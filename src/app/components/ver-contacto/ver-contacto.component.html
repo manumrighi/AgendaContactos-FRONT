@@ -1,12 +1,12 @@
-    <h1>Contacto</h1>
+    <h1>{{ contact.name }}</h1>
     <div class="container">
         <div class="cuadrado">
-            <h3>{{ contact.name }}</h3>
             <h5>Numero telefonico:    {{ contact.celularNumber }}</h5>
             <h5>Correo electronico:    {{ contact.email }}</h5>
             <h5>Favorito:    {{ contact.favorite }}</h5>
         </div>
+        <button type="button" onclick="history.back()">Volver</button>
     </div>
-    <button type="button" routerLink="/contact/">Volver</button>
+    
 
 
