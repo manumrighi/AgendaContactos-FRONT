@@ -4,25 +4,35 @@
 
 <div class="container">
   <div class="contact_form">
-    <form (ngSubmit)="login(form)" #form="ngForm">
-
+    <form>
       <p>
         <label for="userName">UserName</label>
 
-        <input type="userName" name="userName" id="userName" autocomplete="userName" placeholder="ingresa tu userName"
-          [(ngModel)]="authData.userName" #email="ngModel">
+        <input
+          type="userName"
+          name="userName"
+          id="userName"
+          autocomplete="userName"
+          placeholder="ingresa tu userName"
+        />
       </p>
 
       <p>
         <label for="password">Password</label>
 
-        <input type="password" name="password" id="password" autocomplete="current-password"
-          placeholder="Ingresa tu contraseña" [(ngModel)]="authData.password" [required]="true" #password="ngModel">
+        <input
+          type="password"
+          name="password"
+          id="password"
+          autocomplete="current-password"
+          placeholder="Ingresa tu contraseña"
+        />
       </p>
 
-      <button type="submit" [disabled]="form.invalid">Ingresar</button>
-      <button type="button" [routerLink]="['/register']">¿No estás registrado? Regístrate</button>
-
+      <button type="submit" [routerLink]="['/contacts']">Ingresar</button>
+      <button type="button" [routerLink]="['/register']">
+        ¿No estás registrado? Regístrate
+      </button>
     </form>
   </div>
 </div>
